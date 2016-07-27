@@ -43,36 +43,151 @@ a:hover {
 	margin: 0 auto;
 }
 .header {
-	background: #e3eef2;
+	background: #fff;
+	height: 60px;
 }
+
+.header .brand-logo {
+	position: fixed;
+	top: 0;
+    color: #fff;
+    display: inline-block;
+    font-size: 2.1rem;
+    padding: 0;
+	height: 60px;
+}
+.header .brand-logo .center {
+    left: 50%
+}
+@media only screen and (max-width: 1024px) {
+    .header .brand-logo {
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%)
+    }
+    .header .brand-logo .left,
+    .header .brand-logo .right {
+        padding: 0;
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none
+    }
+    .header .brand-logo .left {
+        left: .5rem
+    }
+    .header .brand-logo .right {
+        right: .5rem;
+        left: auto
+    }
+    #toast-container {
+        min-width: 100%;
+        bottom: 0
+    }
+}
+.header .brand-logo .right {
+    right: .5rem;
+    padding: 0
+}
+.header .brand-logo {
+    z-index: 11;
+    top: -.5em;
+    width: 9em;
+    max-width: 20%;
+    position: fixed;
+}
+.header .brand-logo :hover .background-logo {
+    background-color: #4676C2;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19)
+}
+.header .brand-logo .center {
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%)
+}
+.header .brand-logo .background-logo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -1.5em;
+    height: 7.5em;
+    background-color: #3A69B9;
+    -webkit-transform: rotate(13deg) skewX(13deg);
+    -ms-transform: rotate(13deg) skewX(13deg);
+    transform: rotate(13deg) skewX(13deg);
+    -webkit-transition: all .35s ease;
+    transition: all .35s ease
+}
+.header .brand-logo .image-logo {
+    position: absolute;
+    top: 1em;
+    left: 7.5%;
+    width: 85%
+}
+.header .brand-logo:hover .background-logo {
+    background-color: #4676C2;
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
+}
+@media only screen and (max-width: 1064px) {
+    .header .brand-logo {
+        top: -.8em
+    }
+}
+@media only screen and (max-width: 1600px) {
+    .header .brand-logo .background-logo {
+        height: 7em
+    }
+}
+@media only screen and (max-width: 1280px) {
+    .header .brand-logo .background-logo {
+        height: 6.5em
+    }
+}
+@media only screen and (max-width: 1130px) {
+    .header .brand-logo .background-logo {
+        height: 6em
+    }
+}
+
 .box_clear::after {
 	content: '';
 	display: block;
 	clear: both;
 }
-.header .logo {
-	margin-top: 20px;
-	display: block;
-	float: left;
-}
 .header .aphone {
-	float: right;
 	font-size: 20px;
 	line-height: 33px;
 	height: 33px;
 	color: #3a69b9;
 	text-decoration: none;
-	background: url(images/phone.png) no-repeat 0 0;
+	/*background: url(images/phone.png) no-repeat 0 0;*/
 	padding-left: 20px;
-	margin-top: 16px;
+	top: 16px;
 	font-weight: 600;
+	position: absolute;
+	right: 30px;
+}
+.header .aphone span {
+    color: grey;
+	margin-left: 5px;
+}
+.header .aphone svg {
+	position: absolute;
+	top:5px;
+	left: 0;
+	fill: none;
+    stroke: #3A69B9;
+    stroke-width: 2;
+    width: 24px;
+    height: 24px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 .header .top_menu {
-	margin-top: 16px;
-	float: left;
-	margin-left: 60px;
-	width: 490px;
-	font-weight: 900;
+	padding-top: 16px;
+	width: 520px;
+	margin: 0 auto;
 }
 .header .top_menu ul {
 	list-style-type: none;
@@ -90,17 +205,20 @@ a:hover {
 	line-height: 22px;
 	height: 22px;
 	padding: 10px 10px;
-}
-.header .top_menu ul li a.act {
-	color: #000;
 	text-decoration: none;
-	background: #fff;
+	color: #000;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.header .top_menu ul li a.act, .header .top_menu ul li a:hover {
+    color: #fff;
+    background-color: rgba(58,105,185,.8);
 }
 .header .top_menu ul .inner {
 	position: absolute;
 	left: 0;
 	width: 100%;
-	background: #fff;
+	background: #e3eef2;
 	box-shadow: 0px 2px 3px rgba(0,0,0,.2);
 	z-index: 10;
 }
@@ -117,6 +235,7 @@ a:hover {
 .header .top_menu ul ul {
 	margin-right: 180px;
 	float: left;
+	margin-left: 22%;
 }
 .header .top_menu ul ul li {
 
@@ -133,15 +252,16 @@ a:hover {
 .header .top_menu ul ul li a:hover {
 	color: #3a69b9;
 	text-decoration: none;
-	background: #fff;
 	border-color: transparent;
+	background: none;
+	font-weight: normal;
 }
 .header .top_menu ul ul li a.act {
 	color: #3a69b9;
 	text-decoration: none;
-	background: #fff;
 	border-color: transparent;
-	font-weight: bold;
+	background: none;
+	font-weight: normal;
 }
 .header .top_menu ul .container .amodal {
 	margin-top: 9px;
@@ -641,12 +761,13 @@ a:hover {
 #sync1 .item{
     margin: 0px 60px;
 	height: 300px; 
+	position: relative;
 }
 #sync1 .item .img {
 	width: 320px;
 	height: 300px;
 	overflow: hidden;
-	float: left;
+	position: absolute;
 }
 #sync1 .item .img img {
 	display: block;
@@ -655,9 +776,9 @@ a:hover {
 	height: 100%;
 }
 #sync1 .item .d {
-	float: right;
+	position: absolute;
+	margin-left: 350px;
 	height: 300px;
-	width: 450px;
 	overflow: hidden;
 }
 #sync1 .item .t {
@@ -843,7 +964,7 @@ a:hover {
 #feedback form .b .с:hover {
 	text-decoration: none;
 }
-.fancybox-opened .fancybox-close {
+.fancybox-wrap .fancybox-close {
 	background: none;
     font-size: 40px;
     line-height: 38px;
@@ -859,7 +980,7 @@ a:hover {
 	top: 0;
     right: 0;
 }
-.fancybox-opened .fancybox-close::after {
+.fancybox-wrap .fancybox-close::after {
 	content: '×';
 }
 .fancybox-skin .fancybox-inner {
@@ -867,7 +988,7 @@ a:hover {
 	width: 736px!important;
 	height: 498px!important;
 }
-.fancybox-opened .fancybox-skin {
+.fancybox-wrap .fancybox-skin {
 	position: relative;
     background: #fff;
     color: #000;

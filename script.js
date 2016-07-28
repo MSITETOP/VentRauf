@@ -44,6 +44,13 @@ $( function() {
 		if(scrolled >= dopmenutop) $(".header .top_menu ul .inner").addClass("fixed");
 		else $(".header .top_menu ul .inner").removeClass("fixed");
 	}
+	
+	var hc = $(".header .top_menu ul .inner").height();
+	$(".menuhidebox").css('height',hc);
+	$(window).resize(function(){
+		var hc = $(".header .top_menu ul .inner").height();
+		$(".menuhidebox").css('height',hc);
+	});
 });
 function zoomer() {
 	$("body").css('zoom',$(window).width()/1024);

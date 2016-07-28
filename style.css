@@ -48,7 +48,7 @@ a:hover {
 }
 
 .header .brand-logo {
-	position: fixed;
+	position: absolute;
 	top: 0;
     color: #fff;
     display: inline-block;
@@ -94,7 +94,7 @@ a:hover {
     top: -.5em;
     width: 9em;
     max-width: 20%;
-    position: fixed;
+    position: absolute;
 }
 .header .brand-logo :hover .background-logo {
     background-color: #4676C2;
@@ -128,27 +128,6 @@ a:hover {
     background-color: #4676C2;
     box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
 }
-@media only screen and (max-width: 1064px) {
-    .header .brand-logo {
-        top: -.8em
-    }
-}
-@media only screen and (max-width: 1600px) {
-    .header .brand-logo .background-logo {
-        height: 7em
-    }
-}
-@media only screen and (max-width: 1280px) {
-    .header .brand-logo .background-logo {
-        height: 6.5em
-    }
-}
-@media only screen and (max-width: 1130px) {
-    .header .brand-logo .background-logo {
-        height: 6em
-    }
-}
-
 .box_clear::after {
 	content: '';
 	display: block;
@@ -264,7 +243,7 @@ a:hover {
 	font-weight: normal;
 }
 .header .top_menu ul .container .amodal {
-	margin-top: 9px;
+	margin-top: 10px;
 	position: absolute;
 	right: 30px;
 	display: block;
@@ -281,8 +260,50 @@ a:hover {
 .header .top_menu ul .container .amodal:hover {
 	background: #3a69b9;
 }
+.header .top_menu ul .fixed .amodal {
+	margin-top: 30px;
+}
+.header .top_menu ul .container .aphone {
+	margin-top: 0;
+	color: #000;
+	font-size: 16px;
+	padding: 0;
+	padding-left: 15px;
+	display: none;
+}
+.header .top_menu ul .fixed .aphone {
+	display: block;
+}
+.header .top_menu ul .container .aphone svg {
+	top: auto;
+}
+.header .top_menu ul .container .aphone:hover {
+	background: none;
+}
+.header .top_menu ul .image-menu {
+	display: none;
+}
+.header .top_menu ul .fixed .image-menu {
+    display: block;
+	position: absolute;
+    width: 20%;	
+	height: 100%;
+	overflow: hidden;
+	top: 0;
+	left: 30px;
+	text-align: center;
+}
+.header .top_menu ul .image-menu a {
+	padding: 5px 0;
+}
+.header .top_menu ul .image-menu a:hover {
+	background: none;
+}
+.header .top_menu ul .image-menu img {
+
+}
 .first_box {
-	background: url(images/first_bg.jpg) no-repeat 50% 50%;
+	background: url(images/first_bg.jpg) no-repeat 50% 0%;
 	background-size: cover;
 	width: 100%;
 	height: 410px;
@@ -300,9 +321,9 @@ a:hover {
 	width: 477.25px;
 	background: rgba(94,132,195,.8);
 	position: absolute;
-	bottom: 60px;
+	right: 30px;
+    top: 80px;
 	color: #fff;
-	left: 50%;
 	margin-left: 0;
 }
 .first_box .bbox .ibox {
@@ -563,9 +584,12 @@ a:hover {
 	font-weight: 500;
 	padding: 10px 0;
 }
+.box_7 .container {
+	position: relative;
+}
 .box_7 .left {
-	width: 47%;
-	float: left;
+	position: absolute;
+	margin-right: 430px;
 }
 .box_7 .right {
 	width: 350px;
@@ -655,6 +679,7 @@ a:hover {
 	display: block;
 	margin: 10px;
 	width: 95%;
+	font-size: 16px;
 }
 .box_8 .input input::-webkit-input-placeholder {color:#fff;}
 .box_8 .input input::-moz-placeholder          {color:#fff;}
@@ -854,8 +879,8 @@ a:hover {
 	margin-top: -7px;
 }
 #sync2 .item .t {
-	font-size: 8px;
-	line-height: 12px;
+	font-size: 12px;
+	line-height: 16px;
 }
 #feedback {
 	transition: 1s;
@@ -869,7 +894,7 @@ a:hover {
 	box-shadow: 1px 1px 4px rgba(0,0,0,.2);
 	padding: 40px 25px;
 	opacity: 1;
-	top: 70px;
+	top: 90px;
 }
 #feedback .h {
 	margin-bottom: 40px;

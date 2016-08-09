@@ -55,10 +55,52 @@ $( function() {
 function zoomer() {
 	$("body").css('zoom',$(window).width()/1024);
 }
+// Отправка форм 
+function sendForm(_this,type){
+    var err = false;
+    $(_this).find("input").each(function(i,elem) {
+        if (!$(this).val()) {
+            $(this).css('border-color', 'red');
+            err = true;
+        } else {
+            $(this).css('border-color', 'white');
+        }
+    });
 
+    var title = type;
+    if(type=='getprice') {
+        title = "Заявка на получение прайс листа";
+    }
+    if(type=='feedback') {
+        title = "Заявка на обратный звонок";
+    }
+    
+ 	var msg = $(_this).serialize();
+    
+    if(!err) {
+        $.ajax({
+              type: 'POST',
+              url: 'ajax/mail.php',
+              data: msg+"&title="+title,
+              success: function(data) {
+                  if(data) {
+                    $(_this).html("<div style='font-size: 18px;color: #fff; text-align: center'>Спасибо, ваша заявка отправлена.</div>");
+                    if(type=='getprice') {
+                        yaCounter14958421.reachGoal('get_pricelist');
+                        ga('send', 'event', 'lead', 'get_pricelist');
+                    }
+                    if(type=='feedback') {
+                        yaCounter14958421.reachGoal('order');
+                        ga('send', 'event', 'lead', 'order');
+                    }                    
+                  }                
+              }
+        });   
+    }
+}
 // После инициализации гугл карты
 function initMap() {
-  var myLatLng = {lat: 56.8262066, lng: 60.5926835};
+  var myLatLng = {lat: 55.75184939, lng: 49.10888672};
 
   var image = {
     url: 'images/placemark.png',
@@ -69,22 +111,22 @@ function initMap() {
     center: myLatLng,
     scrollwheel: false,
     mapTypeControl: false,
-    zoom: 13
+    zoom: 6
   });
 
   new google.maps.Marker({
     map: map,
-    position: {lat: 56.8362066, lng: 60.5726835},
+    position: {lat: 56.8389261, lng: 60.6057025},
     icon: image
   });
   new google.maps.Marker({
     map: map,
-    position: {lat: 56.8162066, lng: 60.5996835},
+    position: {lat: 56.0363252, lng: 35.9573132},
     icon: image
   });
   new google.maps.Marker({
     map: map,
-    position: {lat: 56.8262066, lng: 60.5926835},
+    position: {lat: 57.6260744, lng: 39.8844708},
     icon: image
   });
 }
@@ -118,6 +160,8 @@ $(document).ready(function() {
     itemsTablet       : [768,10],
     itemsMobile       : [479,10],
     pagination:false,
+    navigation: true,
+    navigationText:	["&#8249;","&#8250;"],
     responsiveRefreshRate : 100,
     afterInit : function(el){
       el.find(".owl-item").eq(0).addClass("synced");

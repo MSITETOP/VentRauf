@@ -1067,3 +1067,13 @@ a:hover {
 	opacity: 1;
 	filter: Alpha(Opacity=100);
 }
+.box_1_2 .item {
+    margin: 30px 0;
+}
+.box_1_2 .title {
+    color: #000;
+    text-align: left;
+    font-size: 24px;
+    font-weight: normal;
+    padding: 5px 0;
+}

@@ -98,9 +98,28 @@ function sendForm(_this,type){
         });   
     }
 }
+function mapClick(url){
+    $.fancybox({
+        href: 'ajax/openurl.php?url='+url,
+		type: 'ajax',
+		autoSize: false,
+		fitToView: false,
+		padding: 0,
+        width: 940,
+        height: 604,
+		scrolling: 'no',
+		helpers: {
+			overlay: {
+				css: {'background' : 'rgba(0, 0, 0, 0)'},
+				locked: false
+			}
+		},
+	});
+}
+
 // После инициализации гугл карты
 function initMap() {
-  var myLatLng = {lat: 55.75184939, lng: 49.10888672};
+  var myLatLng = {lat: 55, lng: 86};
 
   var image = {
     url: 'images/placemark.png',
@@ -111,29 +130,192 @@ function initMap() {
     center: myLatLng,
     scrollwheel: false,
     mapTypeControl: false,
-    zoom: 6
+    zoom: 4
   });
 
   new google.maps.Marker({
     map: map,
-    position: {lat: 56.8389261, lng: 60.6057025},
+    position: {lat: 57.9214912, lng: 59.9816186},
     icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/promyishlennyie-dyimoxodyi/otgruzka-dyimoxodov-v-g.-nizhnij-tagil.html');
   });
   new google.maps.Marker({
     map: map,
-    position: {lat: 56.0363252, lng: 35.9573132},
+    position: {lat: 51.7239017, lng: 55.074099},
     icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/promyishlennyie-dyimoxodyi/dyimovaya-truba-na-yuzhnom-urale.html');
+  });
+  new google.maps.Marker({
+    map: map,
+    position: {lat: 56.8389261, lng: 60.6057025},
+    icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/promyishlennyie-dyimoxodyi/montazh-dyimoxodov-v-g.-ekaterinburg.html');
+  });
+  new google.maps.Marker({
+    map: map,
+    position: {lat: 55.755826, lng: 37.6173},
+    icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/promyishlennyie-dyimoxodyi/dyimoxodyi-dlya-20-ti-etazhnogo-doma-v-podmoskove.html');
+  });
+  new google.maps.Marker({
+    map: map,
+    position: {lat: 55.3005168, lng: 58.1398506},
+    icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/promyishlennyie-dyimoxodyi/blochno%E2%80%93modulnaya-kotelnaya-na-kurorte-bashkirii-%C2%AByangan-tau%C2%BB.html');
+  });
+  new google.maps.Marker({
+    map: map,
+    position: {lat: 56.1167663, lng: 47.262782},
+    icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/promyishlennyie-dyimoxodyi/sistema-dyimoudaleniya.html');
   });
   new google.maps.Marker({
     map: map,
     position: {lat: 57.6260744, lng: 39.8844708},
     icon: image
-  });
-}
 
-function loadMap() {
-	initMap();
-	google.maps.event.trigger(map, 'resize');
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/koaksialnyie-dyimoxodyi/montazh-koaksialnyix-dyimoxodov-v-g.-yaroslavl.html');
+  });
+  new google.maps.Marker({
+    map: map,
+    position: {lat: 53.4129429, lng: 59.0016233},
+    icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/promyishlennyie-dyimoxodyi/kopiya-kotelnaya-v-gorode-aramil.html');
+  });new google.maps.Marker({
+    map: map,
+    position: {lat: 54.2312172, lng: 56.1645257},
+    icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/promyishlennyie-dyimoxodyi/kotelnaya-v-bashkirii.html');
+  });
+  new google.maps.Marker({
+    map: map,
+    position: {lat: 56.9088786, lng: 60.7950058},
+    icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/promyishlennyie-dyimoxodyi/kopiya-kotelnaya-v-bashkirii.html');
+  });
+  new google.maps.Marker({
+    map: map,
+    position: {lat: 55.755826, lng: 37.6173},
+    icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/promyishlennyie-dyimoxodyi/dyimoxodyi-dlya-20-ti-etazhnogo-doma-v-podmoskove.html');
+  });
+  new google.maps.Marker({
+    map: map,
+    position: {lat: 51.7666482, lng: 55.1004538},
+    icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/promyishlennyie-dyimoxodyi/kopiya-kotelnaya-v-g.-aramil.html');
+  });
+  new google.maps.Marker({
+    map: map,
+    position: {lat: 56.8389261, lng: 60.6057025},
+    icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/promyishlennyie-dyimoxodyi/kotelnaya-v-g.-ekaterinburg,-chkalovskij-rajon.html');
+  });
+  new google.maps.Marker({
+    map: map,
+    position: {lat: 56.721468, lng: 60.637075},
+    icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/promyishlennyie-dyimoxodyi/kotelnaya-v-posyolke-rudnyij.html');
+  });
+  new google.maps.Marker({
+    map: map,
+    position: {lat: 48.5027313, lng: 135.0662599},
+    icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/promyishlennyie-dyimoxodyi/kotelnaya-v-gorode-xabarovsk,-poselok-xor.html');
+  });
+  new google.maps.Marker({
+    map: map,
+    position: {lat: 56.824694, lng: 60.648334},
+    icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/koaksialnyie-dyimoxodyi/kopiya-kotelnaya-v-posyolke-rudnyij.html');
+  });
+  new google.maps.Marker({
+    map: map,
+    position: {lat: 56.0363252, lng: 35.9573132},
+    icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/koaksialnyie-dyimoxodyi/kopiya-konditerskaya-fabrika-sladko,-g.-ekaterinburg.html');
+  });
+  new google.maps.Marker({
+    map: map,
+    position: {lat: 57.2725269, lng: 60.1289279},
+    icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/promyishlennyie-dyimoxodyi/kopiya-kotelnaya-v-g.-barnaul.html');
+  });
+  new google.maps.Marker({
+    map: map,
+    position: {lat: 51.2145242, lng: 58.5440566},
+    icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/promyishlennyie-dyimoxodyi/kopiya-kotelnaya-v-orenburgskoj-oblasti.html');
+  });
+  new google.maps.Marker({
+    map: map,
+    position: {lat: 52.9830748, lng: 49.4405958},
+    icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/promyishlennyie-dyimoxodyi/kopiya-dyimoxod-v-g.-orsk.html');
+  });
+  new google.maps.Marker({
+    map: map,
+    position: {lat: 56.6952914, lng: 60.8270323},
+    icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/promyishlennyie-dyimoxodyi/kotelnaya-v-g.-aramil.html');
+  });
+  new google.maps.Marker({
+    map: map,
+    position: {lat: 56.9362366, lng: 60.8962021},
+    icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/chastnyij-sektor/g.-staropyishminsk.html');
+  });
+  new google.maps.Marker({
+    map: map,
+    position: {lat: 55.755826, lng: 37.6173},
+    icon: image
+
+  }).addListener('click', function() {
+    mapClick('http://ventrauf.ru/nashi-obektyi/promyishlennyie-dyimoxodyi/dyimoxodyi-dlya-20-ti-etazhnogo-doma-v-podmoskove.html');
+  });
 }
 
 
